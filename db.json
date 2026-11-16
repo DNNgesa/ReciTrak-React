@@ -1,0 +1,343 @@
+{
+  "suppliers": [
+    {
+      "id": "sup-1",
+      "name": "Carrefour Kenya (Nairobi)",
+      "category": "Supermarket & Bulk Grocery",
+      "leadTimeDays": 1,
+      "contact": "orders@carrefour.ke"
+    },
+    {
+      "id": "sup-2",
+      "name": "Browns Food Co. (Limuru)",
+      "category": "Artisanal Dairy & Cheese",
+      "leadTimeDays": 2,
+      "contact": "wholesale@brownsfoodco.com"
+    },
+    {
+      "id": "sup-3",
+      "name": "Unga Group Wholesale",
+      "category": "Flour & Dry Goods",
+      "leadTimeDays": 2,
+      "contact": "sales@ungagroup.com"
+    }
+  ],
+  "ingredients": [
+    {
+      "id": "ing-1",
+      "name": "Ajab All Purpose Flour",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 2000,
+      "currentPackPrice": 175.0,
+      "previousPackPrice": 165.0,
+      "stockQty": 6000,
+      "reorderLevel": 2000
+    },
+    {
+      "id": "ing-2",
+      "name": "Mumias White Sugar",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 2000,
+      "currentPackPrice": 302.0,
+      "previousPackPrice": 290.0,
+      "stockQty": 4000,
+      "reorderLevel": 1500
+    },
+    {
+      "id": "ing-3",
+      "name": "Carrefour Brown Sugar",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 2000,
+      "currentPackPrice": 304.0,
+      "previousPackPrice": 285.0,
+      "stockQty": 2000,
+      "reorderLevel": 1000
+    },
+    {
+      "id": "ing-4",
+      "name": "Daima Unsalted Butter",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 500,
+      "currentPackPrice": 879.0,
+      "previousPackPrice": 820.0,
+      "stockQty": 1500,
+      "reorderLevel": 500
+    },
+    {
+      "id": "ing-5",
+      "name": "Brookside Whipping Cream",
+      "supplierId": "sup-1",
+      "unit": "ml",
+      "packSize": 400,
+      "currentPackPrice": 569.0,
+      "previousPackPrice": 530.0,
+      "stockQty": 1200,
+      "reorderLevel": 800
+    },
+    {
+      "id": "ing-6",
+      "name": "Browns Mascarpone Cheese",
+      "supplierId": "sup-2",
+      "unit": "g",
+      "packSize": 200,
+      "currentPackPrice": 775.0,
+      "previousPackPrice": 725.0,
+      "stockQty": 400,
+      "reorderLevel": 400
+    },
+    {
+      "id": "ing-7",
+      "name": "Browns Cream Cheese",
+      "supplierId": "sup-2",
+      "unit": "g",
+      "packSize": 250,
+      "currentPackPrice": 750.0,
+      "previousPackPrice": 700.0,
+      "stockQty": 1000,
+      "reorderLevel": 750
+    },
+    {
+      "id": "ing-8",
+      "name": "Sagana Farm Eggs",
+      "supplierId": "sup-1",
+      "unit": "pcs",
+      "packSize": 30,
+      "currentPackPrice": 504.0,
+      "previousPackPrice": 480.0,
+      "stockQty": 30,
+      "reorderLevel": 12
+    },
+    {
+      "id": "ing-9",
+      "name": "Dairyland Dark Compound Chocolate",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 500,
+      "currentPackPrice": 600.0,
+      "previousPackPrice": 560.0,
+      "stockQty": 1000,
+      "reorderLevel": 300
+    },
+    {
+      "id": "ing-10",
+      "name": "Dairyland Dark Milk Chocolate",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 80,
+      "currentPackPrice": 240.0,
+      "previousPackPrice": 220.0,
+      "stockQty": 400,
+      "reorderLevel": 160
+    },
+    {
+      "id": "ing-11",
+      "name": "Clovers Cocoa Powder",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 200,
+      "currentPackPrice": 318.0,
+      "previousPackPrice": 350.0,
+      "stockQty": 400,
+      "reorderLevel": 100
+    },
+    {
+      "id": "ing-12",
+      "name": "Dutch Lady Condensed Milk",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 405,
+      "currentPackPrice": 345.0,
+      "previousPackPrice": 330.0,
+      "stockQty": 810,
+      "reorderLevel": 405
+    },
+    {
+      "id": "ing-13",
+      "name": "Festival Vanilla Essence",
+      "supplierId": "sup-1",
+      "unit": "ml",
+      "packSize": 200,
+      "currentPackPrice": 259.0,
+      "previousPackPrice": 245.0,
+      "stockQty": 400,
+      "reorderLevel": 100
+    },
+    {
+      "id": "ing-14",
+      "name": "Zesta Baking Powder",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 500,
+      "currentPackPrice": 189.0,
+      "previousPackPrice": 180.0,
+      "stockQty": 500,
+      "reorderLevel": 150
+    },
+    {
+      "id": "ing-15",
+      "name": "Clovers Bicarbonate Soda",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 100,
+      "currentPackPrice": 25.0,
+      "previousPackPrice": 25.0,
+      "stockQty": 200,
+      "reorderLevel": 50
+    },
+    {
+      "id": "ing-16",
+      "name": "Kensalt Table Salt",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 1000,
+      "currentPackPrice": 47.0,
+      "previousPackPrice": 45.0,
+      "stockQty": 1000,
+      "reorderLevel": 250
+    },
+    {
+      "id": "ing-17",
+      "name": "Forno Bonomi Savoiardi Ladyfingers",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 200,
+      "currentPackPrice": 299.0,
+      "previousPackPrice": 280.0,
+      "stockQty": 600,
+      "reorderLevel": 400
+    },
+    {
+      "id": "ing-18",
+      "name": "Manji Digestive Biscuits",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 200,
+      "currentPackPrice": 200.0,
+      "previousPackPrice": 190.0,
+      "stockQty": 600,
+      "reorderLevel": 200
+    },
+    {
+      "id": "ing-19",
+      "name": "Brookside Natural Maziwa Lala",
+      "supplierId": "sup-1",
+      "unit": "ml",
+      "packSize": 1000,
+      "currentPackPrice": 194.0,
+      "previousPackPrice": 185.0,
+      "stockQty": 2000,
+      "reorderLevel": 1000
+    },
+    {
+      "id": "ing-20",
+      "name": "Zesta Corn Flour",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 400,
+      "currentPackPrice": 99.0,
+      "previousPackPrice": 95.0,
+      "stockQty": 400,
+      "reorderLevel": 100
+    },
+    {
+      "id": "ing-21",
+      "name": "Browns Sour Cream",
+      "supplierId": "sup-2",
+      "unit": "g",
+      "packSize": 200,
+      "currentPackPrice": 775.0,
+      "previousPackPrice": 740.0,
+      "stockQty": 400,
+      "reorderLevel": 200
+    },
+    {
+      "id": "ing-22",
+      "name": "Nescafe Classic Coffee",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 100,
+      "currentPackPrice": 650.0,
+      "previousPackPrice": 610.0,
+      "stockQty": 200,
+      "reorderLevel": 50
+    }
+  ],
+  "recipes": [
+    {
+      "id": "rec-1",
+      "name": "Easy 10 Minute Tiramisu",
+      "category": "Chilled Desserts",
+      "yieldServings": 9,
+      "sellingPriceBatch": 4500,
+      "bom": [
+        { "ingredientId": "ing-5", "qty": 360 },
+        { "ingredientId": "ing-2", "qty": 38 },
+        { "ingredientId": "ing-13", "qty": 13 },
+        { "ingredientId": "ing-16", "qty": 2 },
+        { "ingredientId": "ing-6", "qty": 340 },
+        { "ingredientId": "ing-12", "qty": 80 },
+        { "ingredientId": "ing-22", "qty": 15 },
+        { "ingredientId": "ing-17", "qty": 400 },
+        { "ingredientId": "ing-11", "qty": 15 }
+      ]
+    },
+    {
+      "id": "rec-2",
+      "name": "The Best Chocolate Chip Cookies Ever",
+      "category": "Cookies",
+      "yieldServings": 18,
+      "sellingPriceBatch": 3600,
+      "bom": [
+        { "ingredientId": "ing-1", "qty": 206 },
+        { "ingredientId": "ing-4", "qty": 113 },
+        { "ingredientId": "ing-3", "qty": 150 },
+        { "ingredientId": "ing-2", "qty": 100 },
+        { "ingredientId": "ing-8", "qty": 2 },
+        { "ingredientId": "ing-9", "qty": 99 },
+        { "ingredientId": "ing-10", "qty": 85 },
+        { "ingredientId": "ing-13", "qty": 10 },
+        { "ingredientId": "ing-16", "qty": 5 },
+        { "ingredientId": "ing-15", "qty": 1 }
+      ]
+    },
+    {
+      "id": "rec-3",
+      "name": "The Best Flaky Biscuits Ever",
+      "category": "Baked Pastries",
+      "yieldServings": 10,
+      "sellingPriceBatch": 2500,
+      "bom": [
+        { "ingredientId": "ing-1", "qty": 450 },
+        { "ingredientId": "ing-4", "qty": 168 },
+        { "ingredientId": "ing-19", "qty": 294 },
+        { "ingredientId": "ing-2", "qty": 23 },
+        { "ingredientId": "ing-14", "qty": 23 },
+        { "ingredientId": "ing-16", "qty": 10 }
+      ]
+    },
+    {
+      "id": "rec-4",
+      "name": "Ultra-Creamy New York Cheesecake",
+      "category": "Cakes & Cheesecakes",
+      "yieldServings": 10,
+      "sellingPriceBatch": 5500,
+      "bom": [
+        { "ingredientId": "ing-7", "qty": 907 },
+        { "ingredientId": "ing-2", "qty": 225 },
+        { "ingredientId": "ing-18", "qty": 150 },
+        { "ingredientId": "ing-4", "qty": 57 },
+        { "ingredientId": "ing-8", "qty": 5 },
+        { "ingredientId": "ing-5", "qty": 60 },
+        { "ingredientId": "ing-21", "qty": 60 },
+        { "ingredientId": "ing-13", "qty": 10 },
+        { "ingredientId": "ing-20", "qty": 15 },
+        { "ingredientId": "ing-16", "qty": 5 }
+      ]
+    }
+  ],
+  "orders": []
+}
