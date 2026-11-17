@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useErp } from "../context/ErpContext";
 import RestockRow from "../components/RestockRow";
 
 function RestockPage() {
-  const { ingredients, setIngredients, suppliers } = useOutletContext();
+  const { ingredients, setIngredients, suppliers } = useErp();
   const [orderPacks, setOrderPacks] = useState({});
 
   const lowStockItems = ingredients.filter(

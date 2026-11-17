@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useErp } from "../context/ErpContext";
 import IngredientRow from "../components/IngredientRow";
 
 function InventoryPage() {
-  const { ingredients, setIngredients, suppliers } = useOutletContext();
+  const { ingredients, setIngredients, suppliers } = useErp();
   const [search, setSearch] = useState("");
   const [supplierFilter, setSupplierFilter] = useState("All");
 

@@ -1,12 +1,15 @@
 import { NavLink } from "react-router-dom";
+import { useErp } from "../context/ErpContext";
 
-function NavBar({ lowStockCount }) {
+function NavBar() {
+  const { lowStockCount } = useErp();
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm mb-4">
       <div className="container">
         <NavLink className="navbar-brand fw-bold" to="/recipes">
           <i className="bi bi-shop me-2 text-warning"></i>
-          ReciTrak ERP
+          ReciTrak ERP 
         </NavLink>
 
         <div className="navbar-nav ms-auto d-flex flex-row flex-wrap gap-2">
@@ -16,7 +19,7 @@ function NavBar({ lowStockCount }) {
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-             BOM Costing
+            <i className="bi bi-journal-richtext me-1"></i> Recipes & BOM Costing
           </NavLink>
 
           <NavLink
@@ -25,7 +28,7 @@ function NavBar({ lowStockCount }) {
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-             Inventory & Suppliers
+            <i className="bi bi-boxes me-1"></i> Inventory & Suppliers
           </NavLink>
 
           <NavLink
@@ -34,7 +37,7 @@ function NavBar({ lowStockCount }) {
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-             Restock
+            <i className="bi bi-truck me-1"></i> Restock Matrix
             {lowStockCount > 0 && (
               <span className="badge bg-danger ms-2">{lowStockCount}</span>
             )}
@@ -46,7 +49,7 @@ function NavBar({ lowStockCount }) {
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-             Point Of Sale
+            <i className="bi bi-cash-register me-1"></i> Point Of Sale
           </NavLink>
         </div>
       </div>

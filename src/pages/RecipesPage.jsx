@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useErp } from "../context/ErpContext";
 import RecipeCard from "../components/RecipeCard";
 import RecipeBomTable from "../components/RecipeBomTable";
 import NewRecipeForm from "../components/NewRecipeForm";
 
 function RecipesPage() {
-  const { recipes, setRecipes, ingredients } = useOutletContext();
+  const { recipes, setRecipes, ingredients } = useErp();
   const [selectedId, setSelectedId] = useState("");
   const [showForm, setShowForm] = useState(false);
 

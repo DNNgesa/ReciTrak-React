@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useErp } from "../context/ErpContext";
 import PosMenuCard from "../components/PosMenuCard";
 
 function PosPage() {
   const { recipes, ingredients, setIngredients, orders, setOrders } =
-    useOutletContext();
+    useErp();
   const [message, setMessage] = useState("");
 
   function canMakeRecipe(recipe) {
