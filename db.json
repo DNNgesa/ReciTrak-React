@@ -29,9 +29,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 2000,
-      "currentPackPrice": 175.0,
-      "previousPackPrice": 165.0,
-      "stockQty": 6000,
+      "currentPackPrice": 175,
+      "previousPackPrice": 165,
+      "stockQty": 5494,
       "reorderLevel": 2000
     },
     {
@@ -40,9 +40,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 2000,
-      "currentPackPrice": 302.0,
-      "previousPackPrice": 290.0,
-      "stockQty": 4000,
+      "currentPackPrice": 302,
+      "previousPackPrice": 290,
+      "stockQty": 2917,
       "reorderLevel": 1500
     },
     {
@@ -51,9 +51,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 2000,
-      "currentPackPrice": 304.0,
-      "previousPackPrice": 285.0,
-      "stockQty": 2000,
+      "currentPackPrice": 304,
+      "previousPackPrice": 285,
+      "stockQty": 1700,
       "reorderLevel": 1000
     },
     {
@@ -62,9 +62,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 500,
-      "currentPackPrice": 879.0,
-      "previousPackPrice": 820.0,
-      "stockQty": 1500,
+      "currentPackPrice": 879,
+      "previousPackPrice": 820,
+      "stockQty": 1220,
       "reorderLevel": 500
     },
     {
@@ -73,9 +73,9 @@
       "supplierId": "sup-1",
       "unit": "ml",
       "packSize": 400,
-      "currentPackPrice": 569.0,
-      "previousPackPrice": 530.0,
-      "stockQty": 1200,
+      "currentPackPrice": 569,
+      "previousPackPrice": 530,
+      "stockQty": 780,
       "reorderLevel": 800
     },
     {
@@ -84,9 +84,9 @@
       "supplierId": "sup-2",
       "unit": "g",
       "packSize": 200,
-      "currentPackPrice": 775.0,
-      "previousPackPrice": 725.0,
-      "stockQty": 400,
+      "currentPackPrice": 775,
+      "previousPackPrice": 725,
+      "stockQty": 60,
       "reorderLevel": 400
     },
     {
@@ -95,9 +95,9 @@
       "supplierId": "sup-2",
       "unit": "g",
       "packSize": 250,
-      "currentPackPrice": 750.0,
-      "previousPackPrice": 700.0,
-      "stockQty": 1000,
+      "currentPackPrice": 750,
+      "previousPackPrice": 700,
+      "stockQty": 93,
       "reorderLevel": 750
     },
     {
@@ -106,9 +106,9 @@
       "supplierId": "sup-1",
       "unit": "pcs",
       "packSize": 30,
-      "currentPackPrice": 504.0,
-      "previousPackPrice": 480.0,
-      "stockQty": 30,
+      "currentPackPrice": 504,
+      "previousPackPrice": 480,
+      "stockQty": 19,
       "reorderLevel": 12
     },
     {
@@ -117,8 +117,8 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 500,
-      "currentPackPrice": 600.0,
-      "previousPackPrice": 560.0,
+      "currentPackPrice": 600,
+      "previousPackPrice": 560,
       "stockQty": 1000,
       "reorderLevel": 300
     },
@@ -128,9 +128,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 80,
-      "currentPackPrice": 240.0,
-      "previousPackPrice": 220.0,
-      "stockQty": 400,
+      "currentPackPrice": 240,
+      "previousPackPrice": 220,
+      "stockQty": 315,
       "reorderLevel": 160
     },
     {
@@ -139,9 +139,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 200,
-      "currentPackPrice": 318.0,
-      "previousPackPrice": 350.0,
-      "stockQty": 400,
+      "currentPackPrice": 318,
+      "previousPackPrice": 350,
+      "stockQty": 250,
       "reorderLevel": 100
     },
     {
@@ -150,9 +150,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 405,
-      "currentPackPrice": 345.0,
-      "previousPackPrice": 330.0,
-      "stockQty": 810,
+      "currentPackPrice": 345,
+      "previousPackPrice": 330,
+      "stockQty": 730,
       "reorderLevel": 405
     },
     {
@@ -161,9 +161,9 @@
       "supplierId": "sup-1",
       "unit": "ml",
       "packSize": 200,
-      "currentPackPrice": 259.0,
-      "previousPackPrice": 245.0,
-      "stockQty": 400,
+      "currentPackPrice": 259,
+      "previousPackPrice": 245,
+      "stockQty": 355,
       "reorderLevel": 100
     },
     {
@@ -172,9 +172,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 500,
-      "currentPackPrice": 189.0,
-      "previousPackPrice": 180.0,
-      "stockQty": 500,
+      "currentPackPrice": 189,
+      "previousPackPrice": 180,
+      "stockQty": 490,
       "reorderLevel": 150
     },
     {
@@ -183,9 +183,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 100,
-      "currentPackPrice": 25.0,
-      "previousPackPrice": 25.0,
-      "stockQty": 200,
+      "currentPackPrice": 25,
+      "previousPackPrice": 25,
+      "stockQty": 196,
       "reorderLevel": 50
     },
     {
@@ -194,9 +194,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 1000,
-      "currentPackPrice": 47.0,
-      "previousPackPrice": 45.0,
-      "stockQty": 1000,
+      "currentPackPrice": 47,
+      "previousPackPrice": 45,
+      "stockQty": 981,
       "reorderLevel": 250
     },
     {
@@ -205,9 +205,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 200,
-      "currentPackPrice": 299.0,
-      "previousPackPrice": 280.0,
-      "stockQty": 600,
+      "currentPackPrice": 299,
+      "previousPackPrice": 280,
+      "stockQty": 200,
       "reorderLevel": 400
     },
     {
@@ -216,9 +216,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 200,
-      "currentPackPrice": 200.0,
-      "previousPackPrice": 190.0,
-      "stockQty": 600,
+      "currentPackPrice": 200,
+      "previousPackPrice": 190,
+      "stockQty": 450,
       "reorderLevel": 200
     },
     {
@@ -227,8 +227,8 @@
       "supplierId": "sup-1",
       "unit": "ml",
       "packSize": 1000,
-      "currentPackPrice": 194.0,
-      "previousPackPrice": 185.0,
+      "currentPackPrice": 194,
+      "previousPackPrice": 185,
       "stockQty": 2000,
       "reorderLevel": 1000
     },
@@ -238,9 +238,9 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 400,
-      "currentPackPrice": 99.0,
-      "previousPackPrice": 95.0,
-      "stockQty": 400,
+      "currentPackPrice": 99,
+      "previousPackPrice": 95,
+      "stockQty": 385,
       "reorderLevel": 100
     },
     {
@@ -249,9 +249,9 @@
       "supplierId": "sup-2",
       "unit": "g",
       "packSize": 200,
-      "currentPackPrice": 775.0,
-      "previousPackPrice": 740.0,
-      "stockQty": 400,
+      "currentPackPrice": 775,
+      "previousPackPrice": 740,
+      "stockQty": 340,
       "reorderLevel": 200
     },
     {
@@ -260,13 +260,13 @@
       "supplierId": "sup-1",
       "unit": "g",
       "packSize": 100,
-      "currentPackPrice": 650.0,
-      "previousPackPrice": 610.0,
-      "stockQty": 200,
+      "currentPackPrice": 650,
+      "previousPackPrice": 610,
+      "stockQty": 185,
       "reorderLevel": 50
     }
   ],
-    "recipes": [
+  "recipes": [
     {
       "id": "rec-1",
       "name": "Easy 10 Minute Tiramisu",
@@ -275,15 +275,42 @@
       "yieldServings": 9,
       "sellingPriceBatch": 4500,
       "bom": [
-        { "ingredientId": "ing-5", "qty": 360 },
-        { "ingredientId": "ing-2", "qty": 38 },
-        { "ingredientId": "ing-13", "qty": 13 },
-        { "ingredientId": "ing-16", "qty": 2 },
-        { "ingredientId": "ing-6", "qty": 340 },
-        { "ingredientId": "ing-12", "qty": 80 },
-        { "ingredientId": "ing-22", "qty": 15 },
-        { "ingredientId": "ing-17", "qty": 400 },
-        { "ingredientId": "ing-11", "qty": 15 }
+        {
+          "ingredientId": "ing-5",
+          "qty": 360
+        },
+        {
+          "ingredientId": "ing-2",
+          "qty": 38
+        },
+        {
+          "ingredientId": "ing-13",
+          "qty": 13
+        },
+        {
+          "ingredientId": "ing-16",
+          "qty": 2
+        },
+        {
+          "ingredientId": "ing-6",
+          "qty": 340
+        },
+        {
+          "ingredientId": "ing-12",
+          "qty": 80
+        },
+        {
+          "ingredientId": "ing-22",
+          "qty": 15
+        },
+        {
+          "ingredientId": "ing-17",
+          "qty": 400
+        },
+        {
+          "ingredientId": "ing-11",
+          "qty": 15
+        }
       ]
     },
     {
@@ -294,16 +321,46 @@
       "yieldServings": 18,
       "sellingPriceBatch": 3600,
       "bom": [
-        { "ingredientId": "ing-1", "qty": 206 },
-        { "ingredientId": "ing-4", "qty": 113 },
-        { "ingredientId": "ing-3", "qty": 150 },
-        { "ingredientId": "ing-2", "qty": 100 },
-        { "ingredientId": "ing-8", "qty": 2 },
-        { "ingredientId": "ing-9", "qty": 99 },
-        { "ingredientId": "ing-10", "qty": 85 },
-        { "ingredientId": "ing-13", "qty": 10 },
-        { "ingredientId": "ing-16", "qty": 5 },
-        { "ingredientId": "ing-15", "qty": 1 }
+        {
+          "ingredientId": "ing-1",
+          "qty": 206
+        },
+        {
+          "ingredientId": "ing-4",
+          "qty": 113
+        },
+        {
+          "ingredientId": "ing-3",
+          "qty": 150
+        },
+        {
+          "ingredientId": "ing-2",
+          "qty": 100
+        },
+        {
+          "ingredientId": "ing-8",
+          "qty": 2
+        },
+        {
+          "ingredientId": "ing-9",
+          "qty": 99
+        },
+        {
+          "ingredientId": "ing-10",
+          "qty": 85
+        },
+        {
+          "ingredientId": "ing-13",
+          "qty": 10
+        },
+        {
+          "ingredientId": "ing-16",
+          "qty": 5
+        },
+        {
+          "ingredientId": "ing-15",
+          "qty": 1
+        }
       ]
     },
     {
@@ -314,12 +371,30 @@
       "yieldServings": 10,
       "sellingPriceBatch": 2500,
       "bom": [
-        { "ingredientId": "ing-1", "qty": 450 },
-        { "ingredientId": "ing-4", "qty": 168 },
-        { "ingredientId": "ing-19", "qty": 294 },
-        { "ingredientId": "ing-2", "qty": 23 },
-        { "ingredientId": "ing-14", "qty": 23 },
-        { "ingredientId": "ing-16", "qty": 10 }
+        {
+          "ingredientId": "ing-1",
+          "qty": 450
+        },
+        {
+          "ingredientId": "ing-4",
+          "qty": 168
+        },
+        {
+          "ingredientId": "ing-19",
+          "qty": 294
+        },
+        {
+          "ingredientId": "ing-2",
+          "qty": 23
+        },
+        {
+          "ingredientId": "ing-14",
+          "qty": 23
+        },
+        {
+          "ingredientId": "ing-16",
+          "qty": 10
+        }
       ]
     },
     {
@@ -330,19 +405,49 @@
       "yieldServings": 10,
       "sellingPriceBatch": 5500,
       "bom": [
-        { "ingredientId": "ing-7", "qty": 907 },
-        { "ingredientId": "ing-2", "qty": 225 },
-        { "ingredientId": "ing-18", "qty": 150 },
-        { "ingredientId": "ing-4", "qty": 57 },
-        { "ingredientId": "ing-8", "qty": 5 },
-        { "ingredientId": "ing-5", "qty": 60 },
-        { "ingredientId": "ing-21", "qty": 60 },
-        { "ingredientId": "ing-13", "qty": 10 },
-        { "ingredientId": "ing-20", "qty": 15 },
-        { "ingredientId": "ing-16", "qty": 5 }
+        {
+          "ingredientId": "ing-7",
+          "qty": 907
+        },
+        {
+          "ingredientId": "ing-2",
+          "qty": 225
+        },
+        {
+          "ingredientId": "ing-18",
+          "qty": 150
+        },
+        {
+          "ingredientId": "ing-4",
+          "qty": 57
+        },
+        {
+          "ingredientId": "ing-8",
+          "qty": 5
+        },
+        {
+          "ingredientId": "ing-5",
+          "qty": 60
+        },
+        {
+          "ingredientId": "ing-21",
+          "qty": 60
+        },
+        {
+          "ingredientId": "ing-13",
+          "qty": 10
+        },
+        {
+          "ingredientId": "ing-20",
+          "qty": 15
+        },
+        {
+          "ingredientId": "ing-16",
+          "qty": 5
+        }
       ]
     },
-        {
+    {
       "id": "rec-5",
       "name": "Perfect Easy Chocolate Cake",
       "category": "Cakes & Cheesecakes",
@@ -350,18 +455,78 @@
       "yieldServings": 12,
       "sellingPriceBatch": 4800,
       "bom": [
-        { "ingredientId": "ing-1", "qty": 300 },
-        { "ingredientId": "ing-11", "qty": 135 },
-        { "ingredientId": "ing-14", "qty": 10 },
-        { "ingredientId": "ing-15", "qty": 3 },
-        { "ingredientId": "ing-16", "qty": 7 },
-        { "ingredientId": "ing-3", "qty": 150 },
-        { "ingredientId": "ing-2", "qty": 720 },
-        { "ingredientId": "ing-8", "qty": 4 },
-        { "ingredientId": "ing-13", "qty": 12 },
-        { "ingredientId": "ing-4", "qty": 110 }
+        {
+          "ingredientId": "ing-1",
+          "qty": 300
+        },
+        {
+          "ingredientId": "ing-11",
+          "qty": 135
+        },
+        {
+          "ingredientId": "ing-14",
+          "qty": 10
+        },
+        {
+          "ingredientId": "ing-15",
+          "qty": 3
+        },
+        {
+          "ingredientId": "ing-16",
+          "qty": 7
+        },
+        {
+          "ingredientId": "ing-3",
+          "qty": 150
+        },
+        {
+          "ingredientId": "ing-2",
+          "qty": 720
+        },
+        {
+          "ingredientId": "ing-8",
+          "qty": 4
+        },
+        {
+          "ingredientId": "ing-13",
+          "qty": 12
+        },
+        {
+          "ingredientId": "ing-4",
+          "qty": 110
+        }
       ]
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "id": "E7N6dBR145Q",
+      "recipeName": "The Best Chocolate Chip Cookies Ever",
+      "revenueKes": 3600,
+      "timestamp": "14:13:11"
+    },
+    {
+      "id": "SRdZon4elLw",
+      "recipeName": "Easy 10 Minute Tiramisu",
+      "revenueKes": 4500,
+      "timestamp": "14:32:17"
+    },
+    {
+      "id": "69eVcAQxDKY",
+      "recipeName": "Ultra-Creamy New York Cheesecake",
+      "revenueKes": 5500,
+      "timestamp": "15:03:52"
+    },
+    {
+      "id": "VFUoLXX1PI4",
+      "recipeName": "Perfect Easy Chocolate Cake",
+      "revenueKes": 4800,
+      "timestamp": "15:07:07"
+    }
+  ],
+   "demoRequests": [
+
+   ], 
+   
+  "$schema": "./node_modules/json-server/schema.json"
 }

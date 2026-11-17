@@ -64,7 +64,7 @@ function PosPage() {
     <div className="container pb-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h1 className="h3 fw-bold mb-1">Point of Sale</h1>
+          <h1 className="h3 fw-bold mb-1">Point Of Sale (POS)</h1>
           <p className="text-muted mb-0">
             Selling a batch automatically deducts its recipe ingredients from
             stock.

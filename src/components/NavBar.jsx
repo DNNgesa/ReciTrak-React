@@ -1,56 +1,60 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useErp } from "../context/ErpContext";
 
 function NavBar() {
   const { lowStockCount } = useErp();
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm mb-4">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
       <div className="container">
-        <NavLink className="navbar-brand fw-bold" to="/recipes">
+        <NavLink className="navbar-brand fw-bold" to="/erp/recipes">
           <i className="bi bi-shop me-2 text-warning"></i>
           ReciTrak ERP 
         </NavLink>
 
-        <div className="navbar-nav ms-auto d-flex flex-row flex-wrap gap-2">
+        <div className="navbar-nav ms-auto d-flex flex-row flex-wrap align-items-center gap-2">
           <NavLink
-            to="/recipes"
+            to="/erp/recipes"
             className={({ isActive }) =>
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-             Recipes & BOM Costing
+            <i className="bi bi-journal-richtext me-1"></i> Recipes & BOM
           </NavLink>
 
           <NavLink
-            to="/inventory"
+            to="/erp/inventory"
             className={({ isActive }) =>
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-             Inventory & Suppliers
+            <i className="bi bi-boxes me-1"></i> Inventory
           </NavLink>
 
           <NavLink
-            to="/restock"
+            to="/erp/restock"
             className={({ isActive }) =>
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-             Restock Matrix
+            <i className="bi bi-truck me-1"></i> Restock
             {lowStockCount > 0 && (
               <span className="badge bg-danger ms-2">{lowStockCount}</span>
             )}
           </NavLink>
 
           <NavLink
-            to="/pos"
+            to="/erp/pos"
             className={({ isActive }) =>
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-             Point Of Sale
+            <i className="bi bi-cash-register me-1"></i> POS
           </NavLink>
+
+          <Link to="/" className="btn btn-outline-light btn-sm ms-2">
+            <i className="bi bi-house-door me-1"></i> Home
+          </Link>
         </div>
       </div>
     </nav>

@@ -32,7 +32,7 @@ function InventoryPage() {
           Inventory & Supplier Price Variance
         </h1>
         <p className="text-muted mb-0">
-          Track live stock levels and supplier percentage price increases in KES.
+          Track live stock levels and supplier percentage price changes.
         </p>
       </div>
 

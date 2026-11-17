@@ -31,7 +31,7 @@ function PosMenuCard({ recipe, inStock, onSell }) {
             disabled={!inStock}
             onClick={() => onSell(recipe)}
           >
-            {inStock ? "Ring Up Batch" : "Out of Stock"}
+            {inStock ? "Add to Cart" : "Out of Stock"}
           </button>
         </div>
       </div>

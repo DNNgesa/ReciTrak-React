@@ -3,12 +3,10 @@ import { API_URL } from "../constants";
 
 const ErpContext = createContext();
 
-// 2. Create a custom hook so pages can easily read the context
 export function useErp() {
   return useContext(ErpContext);
 }
 
-// 3. Create the Provider component that holds shared state and fetches data
 export function ErpProvider({ children }) {
   const [suppliers, setSuppliers] = useState([]);
   const [ingredients, setIngredients] = useState([]);

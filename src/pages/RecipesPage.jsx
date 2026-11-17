@@ -67,7 +67,7 @@ function RecipesPage() {
         <div>
           <h1 className="h3 fw-bold mb-1">Recipes & Bill of Materials (BOM)</h1>
           <p className="text-muted mb-0">
-            Click any dessert card to inspect, edit, or delete its recipe BOM.
+            Click any card to inspect, edit, or delete its recipe BOM.
           </p>
         </div>
         <button
