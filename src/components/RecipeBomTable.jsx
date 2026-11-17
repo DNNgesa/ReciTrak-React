@@ -1,4 +1,4 @@
-function RecipeBomTable({ recipe, ingredients, batchCost }) {
+function RecipeBomTable({ recipe, ingredients, batchCost, onEdit, onDelete }) {
   if (!recipe) return null;
 
   const grossProfit = recipe.sellingPriceBatch - batchCost;
@@ -15,13 +15,30 @@ function RecipeBomTable({ recipe, ingredients, batchCost }) {
           </small>
         </div>
 
-        <div className="text-end">
-          <div className="fw-bold text-primary">
-            Batch Cost: KES {batchCost.toFixed(2)}
+        <div className="d-flex align-items-center gap-3 flex-wrap">
+          <div className="text-end">
+            <div className="fw-bold text-primary">
+              Batch Cost: KES {batchCost.toFixed(2)}
+            </div>
+            <small className="text-success fw-semibold">
+              Gross Profit: KES {grossProfit.toFixed(2)}
+            </small>
           </div>
-          <small className="text-success fw-semibold">
-            Gross Profit: KES {grossProfit.toFixed(2)}
-          </small>
+
+          <div className="d-flex gap-2">
+            <button
+              className="btn btn-sm btn-outline-warning text-dark fw-semibold"
+              onClick={onEdit}
+            >
+              <i className="bi bi-pencil-square me-1"></i>Edit Recipe
+            </button>
+            <button
+              className="btn btn-sm btn-outline-danger"
+              onClick={() => onDelete(recipe)}
+            >
+              <i className="bi bi-trash me-1"></i>Delete
+            </button>
+          </div>
         </div>
       </div>
 

@@ -1,14 +1,18 @@
 import { useState } from "react";
 import { useErp } from "../context/ErpContext";
+import { API_URL } from "../constants";
 import RecipeCard from "../components/RecipeCard";
 import RecipeBomTable from "../components/RecipeBomTable";
 import NewRecipeForm from "../components/NewRecipeForm";
+import EditRecipeForm from "../components/EditRecipeForm";
 
 function RecipesPage() {
   const { recipes, setRecipes, ingredients } = useErp();
   const [selectedId, setSelectedId] = useState("");
-  const [showForm, setShowForm] = useState(false);
+  const [showNewForm, setShowNewForm] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
+  // Calculate total cost of a recipe's Bill of Materials
   function getRecipeCost(bom) {
     let totalCost = 0;
 
@@ -23,10 +27,36 @@ function RecipesPage() {
     return totalCost;
   }
 
+  // CREATE: Add newly saved recipe 
   function handleAddRecipe(savedRecipe) {
     setRecipes([...recipes, savedRecipe]);
     setSelectedId(savedRecipe.id);
-    setShowForm(false);
+    setShowNewForm(false);
+  }
+
+  // UPDATE: Replace edited recipe 
+  function handleUpdateRecipe(updatedRecipe) {
+    setRecipes((prev) =>
+      prev.map((r) => (r.id === updatedRecipe.id ? updatedRecipe : r))
+    );
+    setIsEditing(false);
+  }
+
+  // DELETE: Remove recipe from db.json and state
+  function handleDeleteRecipe(recipeToDelete) {
+    const confirmed = window.confirm(
+      `Are you sure you want to delete "${recipeToDelete.name}"?`
+    );
+    if (!confirmed) return;
+
+    fetch(`${API_URL}/recipes/${recipeToDelete.id}`, {
+      method: "DELETE",
+    }).then(() => {
+      const remaining = recipes.filter((r) => r.id !== recipeToDelete.id);
+      setRecipes(remaining);
+      setSelectedId(remaining[0]?.id || "");
+      setIsEditing(false);
+    });
   }
 
   const activeRecipe = recipes.find((r) => r.id === selectedId) || recipes[0];
@@ -35,20 +65,23 @@ function RecipesPage() {
     <div className="container pb-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
         <div>
-          <h1 className="h3 fw-bold mb-1">Bill of Materials (BOM)</h1>
+          <h1 className="h3 fw-bold mb-1">Recipes & Bill of Materials (BOM)</h1>
           <p className="text-muted mb-0">
-            Click any dessert card to inspect its exact ingredient cost in KES.
+            Click any dessert card to inspect, edit, or delete its recipe BOM.
           </p>
         </div>
         <button
           className="btn btn-primary"
-          onClick={() => setShowForm(!showForm)}
+          onClick={() => {
+            setShowNewForm(!showNewForm);
+            setIsEditing(false);
+          }}
         >
-          {showForm ? "Cancel" : "+ Add New Recipe"}
+          {showNewForm ? "Cancel" : "+ Add New Recipe"}
         </button>
       </div>
 
-      {showForm && (
+      {showNewForm && (
         <NewRecipeForm
           ingredients={ingredients}
           onAddRecipe={handleAddRecipe}
@@ -62,16 +95,33 @@ function RecipesPage() {
             recipe={recipe}
             batchCost={getRecipeCost(recipe.bom)}
             isSelected={activeRecipe?.id === recipe.id}
-            onSelect={setSelectedId}
+            onSelect={(id) => {
+              setSelectedId(id);
+              setIsEditing(false);
+            }}
           />
         ))}
       </div>
 
-      <RecipeBomTable
-        recipe={activeRecipe}
-        ingredients={ingredients}
-        batchCost={activeRecipe ? getRecipeCost(activeRecipe.bom) : 0}
-      />
+      {isEditing && activeRecipe ? (
+        <EditRecipeForm
+          recipe={activeRecipe}
+          ingredients={ingredients}
+          onUpdateRecipe={handleUpdateRecipe}
+          onCancel={() => setIsEditing(false)}
+        />
+      ) : (
+        <RecipeBomTable
+          recipe={activeRecipe}
+          ingredients={ingredients}
+          batchCost={activeRecipe ? getRecipeCost(activeRecipe.bom) : 0}
+          onEdit={() => {
+            setIsEditing(true);
+            setShowNewForm(false);
+          }}
+          onDelete={handleDeleteRecipe}
+        />
+      )}
     </div>
   );
 }
