@@ -19,7 +19,7 @@ function NavBar() {
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-            <i className="bi bi-journal-richtext me-1"></i> Recipes & BOM Costing
+             Recipes & BOM Costing
           </NavLink>
 
           <NavLink
@@ -28,7 +28,7 @@ function NavBar() {
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-            <i className="bi bi-boxes me-1"></i> Inventory & Suppliers
+             Inventory & Suppliers
           </NavLink>
 
           <NavLink
@@ -37,7 +37,7 @@ function NavBar() {
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-            <i className="bi bi-truck me-1"></i> Restock Matrix
+             Restock Matrix
             {lowStockCount > 0 && (
               <span className="badge bg-danger ms-2">{lowStockCount}</span>
             )}
@@ -49,7 +49,7 @@ function NavBar() {
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-            <i className="bi bi-cash-register me-1"></i> Point Of Sale
+             Point Of Sale
           </NavLink>
         </div>
       </div>
