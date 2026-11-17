@@ -266,11 +266,12 @@
       "reorderLevel": 50
     }
   ],
-  "recipes": [
+    "recipes": [
     {
       "id": "rec-1",
       "name": "Easy 10 Minute Tiramisu",
       "category": "Chilled Desserts",
+      "image": "https://www.fooddolls.com/wp-content/uploads/2023/05/Tiramisu16671-2-1024x1536.jpg",
       "yieldServings": 9,
       "sellingPriceBatch": 4500,
       "bom": [
@@ -289,6 +290,7 @@
       "id": "rec-2",
       "name": "The Best Chocolate Chip Cookies Ever",
       "category": "Cookies",
+      "image": "https://cdn.prod.website-files.com/6744d2d124649f6ecd466f50/6948c42171296e600dd659e6_2v1%20(13)-p-1600.jpg",
       "yieldServings": 18,
       "sellingPriceBatch": 3600,
       "bom": [
@@ -308,6 +310,7 @@
       "id": "rec-3",
       "name": "The Best Flaky Biscuits Ever",
       "category": "Baked Pastries",
+      "image": "https://whatshouldimakefor.com/wp-content/uploads/2019/11/IMG_4743.jpg",
       "yieldServings": 10,
       "sellingPriceBatch": 2500,
       "bom": [
@@ -323,6 +326,7 @@
       "id": "rec-4",
       "name": "Ultra-Creamy New York Cheesecake",
       "category": "Cakes & Cheesecakes",
+      "image": "https://thesaltedpepper.com/wp-content/uploads/2024/06/Blueberry-Basque-Cheesecake-sq-600x600.jpg",
       "yieldServings": 10,
       "sellingPriceBatch": 5500,
       "bom": [
@@ -336,6 +340,26 @@
         { "ingredientId": "ing-13", "qty": 10 },
         { "ingredientId": "ing-20", "qty": 15 },
         { "ingredientId": "ing-16", "qty": 5 }
+      ]
+    },
+        {
+      "id": "rec-5",
+      "name": "Perfect Easy Chocolate Cake",
+      "category": "Cakes & Cheesecakes",
+      "image": "https://www.recipetineats.com/tachyon/2018/03/Chocolate-Cake_2.jpg?resize=964%2C1350&zoom=0.67",
+      "yieldServings": 12,
+      "sellingPriceBatch": 4800,
+      "bom": [
+        { "ingredientId": "ing-1", "qty": 300 },
+        { "ingredientId": "ing-11", "qty": 135 },
+        { "ingredientId": "ing-14", "qty": 10 },
+        { "ingredientId": "ing-15", "qty": 3 },
+        { "ingredientId": "ing-16", "qty": 7 },
+        { "ingredientId": "ing-3", "qty": 150 },
+        { "ingredientId": "ing-2", "qty": 720 },
+        { "ingredientId": "ing-8", "qty": 4 },
+        { "ingredientId": "ing-13", "qty": 12 },
+        { "ingredientId": "ing-4", "qty": 110 }
       ]
     }
   ],
