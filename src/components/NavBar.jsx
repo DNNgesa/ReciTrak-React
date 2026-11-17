@@ -6,7 +6,7 @@ function NavBar({ lowStockCount }) {
       <div className="container">
         <NavLink className="navbar-brand fw-bold" to="/recipes">
           <i className="bi bi-shop me-2 text-warning"></i>
-          ReciTrak ERP 
+          ReciTrak ERP
         </NavLink>
 
         <div className="navbar-nav ms-auto d-flex flex-row flex-wrap gap-2">
@@ -16,7 +16,7 @@ function NavBar({ lowStockCount }) {
               "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
             }
           >
-             Recipes & BOM Costing
+             BOM Costing
           </NavLink>
 
           <NavLink

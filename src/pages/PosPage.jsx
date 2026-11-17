@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { useOutletContext } from "react-router-dom";
-
-const DEFAULT_IMAGE =
-  "https://unsplash.com";
+import PosMenuCard from "../components/PosMenuCard";
 
 function PosPage() {
   const { recipes, ingredients, setIngredients, orders, setOrders } =
@@ -16,7 +14,7 @@ function PosPage() {
     });
   }
 
-  function handleAddtoCart(recipe) {
+  function handleSellBatch(recipe) {
     if (!canMakeRecipe(recipe)) {
       setMessage(`Not enough stock to make ${recipe.name}!`);
       return;
@@ -34,11 +32,8 @@ function PosPage() {
     });
 
     Promise.all(updateRequests).then((updatedList) => {
-      setIngredients((prevIngredients) =>
-        prevIngredients.map((ing) => {
-          const match = updatedList.find((u) => u.id === ing.id);
-          return match ? match : ing;
-        })
+      setIngredients((prev) =>
+        prev.map((ing) => updatedList.find((u) => u.id === ing.id) || ing)
       );
 
       const newOrder = {
@@ -57,7 +52,7 @@ function PosPage() {
         .then((savedOrder) => {
           setOrders([savedOrder, ...orders]);
           setMessage(
-            `Sold 1 batch of ${recipe.name}! Ingredients deducted from inventory.`
+            `Sold 1 batch of ${recipe.name}! Ingredients deducted from stock.`
           );
         });
     });
@@ -71,12 +66,15 @@ function PosPage() {
         <div>
           <h1 className="h3 fw-bold mb-1">Point of Sale</h1>
           <p className="text-muted mb-0">
-            Selling a batch automatically deducts its recipe ingredients from stock.
+            Selling a batch automatically deducts its recipe ingredients from
+            stock.
           </p>
         </div>
         <div className="card bg-success text-white px-3 py-2 text-end">
           <small>Total Sales</small>
-          <div className="h5 fw-bold mb-0">KES {totalSales.toLocaleString()}</div>
+          <div className="h5 fw-bold mb-0">
+            KES {totalSales.toLocaleString()}
+          </div>
         </div>
       </div>
 
@@ -94,42 +92,14 @@ function PosPage() {
       <div className="row g-4">
         <div className="col-lg-8">
           <div className="row g-3">
-            {recipes.map((recipe) => {
-              const inStock = canMakeRecipe(recipe);
-              return (
-                <div className="col-md-6" key={recipe.id}>
-                  <div className="card h-100 shadow-sm">
-                    <img
-                      src={recipe.image || DEFAULT_IMAGE}
-                      alt={recipe.name}
-                      className="card-img-top"
-                      style={{ height: "160px", objectFit: "cover" }}
-                    />
-                    <div className="card-body d-flex flex-column">
-                      <div className="d-flex justify-content-between mb-2">
-                        <span className="badge bg-primary">{recipe.category}</span>
-                        <strong className="text-success">
-                          KES {recipe.sellingPriceBatch.toLocaleString()}
-                        </strong>
-                      </div>
-                      <h2 className="h5 fw-bold">{recipe.name}</h2>
-                      <p className="small text-muted">
-                        Yield: {recipe.yieldServings} servings
-                      </p>
-                      <button
-                        className={`btn mt-auto w-100 ${
-                          inStock ? "btn-dark" : "btn-outline-danger"
-                        }`}
-                        disabled={!inStock}
-                        onClick={() => handleAddtoCart(recipe)}
-                      >
-                        {inStock ? "Add to Cart" : "Out of Stock"}
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+            {recipes.map((recipe) => (
+              <PosMenuCard
+                key={recipe.id}
+                recipe={recipe}
+                inStock={canMakeRecipe(recipe)}
+                onSell={handleSellBatch}
+              />
+            ))}
           </div>
         </div>
 
@@ -138,7 +108,7 @@ function PosPage() {
             <h2 className="h5 fw-bold mb-3">Recent Sales</h2>
             {orders.length === 0 ? (
               <p className="text-muted small mb-0">
-                No sales yet. Click "Add to Cart" to test stock deduction.
+                No sales yet. 
               </p>
             ) : (
               <ul className="list-group list-group-flush">
@@ -148,7 +118,9 @@ function PosPage() {
                     className="list-group-item d-flex justify-content-between align-items-center px-0"
                   >
                     <div>
-                      <div className="fw-semibold small">{order.recipeName}</div>
+                      <div className="fw-semibold small">
+                        {order.recipeName}
+                      </div>
                       <small className="text-muted">{order.timestamp}</small>
                     </div>
                     <span className="badge bg-success">
