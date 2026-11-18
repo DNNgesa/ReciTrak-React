@@ -57,7 +57,7 @@ function HomePage() {
         <div className="container position-relative py-5" style={{ zIndex: 2 }}>
           <h1 className="display-4 fw-bold mb-3">Your Recipe For Success</h1>
           <p className="lead mx-auto mb-4" style={{ maxWidth: "680px" }}>
-            Transform standardized recipes, live supplier rates, and on-location sales into real-time operational profit.
+            Transform standardized recipes, live supplier rates and on-location sales into real-time operational profit.
           </p>
           <div className="d-flex justify-content-center gap-3 flex-wrap">
             <Link to="/register" className="btn btn-outline-light btn-lg px-4">
