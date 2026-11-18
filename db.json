@@ -264,6 +264,28 @@
       "previousPackPrice": 610,
       "stockQty": 185,
       "reorderLevel": 50
+    },
+    {
+      "id": "yeiIWVjEqt8",
+      "name": "Roasted Hazelnuts",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 500,
+      "currentPackPrice": 1150,
+      "previousPackPrice": 1150,
+      "stockQty": 0,
+      "reorderLevel": 500
+    },
+    {
+      "id": "qKwzfNduVDg",
+      "name": "Shangi Potatoes",
+      "supplierId": "sup-1",
+      "unit": "g",
+      "packSize": 2000,
+      "currentPackPrice": 190,
+      "previousPackPrice": 190,
+      "stockQty": 0,
+      "reorderLevel": 2000
     }
   ],
   "recipes": [
@@ -496,6 +518,28 @@
           "qty": 110
         }
       ]
+    },
+    {
+      "id": "2tPeiEGZSSE",
+      "name": "Crispy Homemade Hash Browns",
+      "category": "Breakfast & Brunch",
+      "image": "https://hillstreetgrocer.com/application/files/3815/6747/1367/Crispy_potato_hash_browns.jpg",
+      "yieldServings": 4,
+      "sellingPriceBatch": 1400,
+      "bom": [
+        {
+          "ingredientId": "qKwzfNduVDg",
+          "qty": 680
+        },
+        {
+          "ingredientId": "ing-4",
+          "qty": 45
+        },
+        {
+          "ingredientId": "ing-16",
+          "qty": 5
+        }
+      ]
     }
   ],
   "orders": [
@@ -524,9 +568,6 @@
       "timestamp": "15:07:07"
     }
   ],
-   "demoRequests": [
-
-   ], 
-   
+  "demoRequests": [],
   "$schema": "./node_modules/json-server/schema.json"
 }

@@ -1,9 +1,25 @@
 import { useState } from "react";
+import { useRecipes } from "../context/RecipeContext";
 import { API_URL, DEFAULT_IMAGE } from "../constants";
 
+const BASE_CATEGORIES = [
+  "Chilled Desserts",
+  "Cookies",
+  "Baked Pastries",
+  "Cakes & Cheesecakes",
+];
+
 function EditRecipeForm({ recipe, ingredients, onUpdateRecipe, onCancel }) {
+  const { recipes } = useRecipes();
+
+  const existingCategories = Array.from(
+    new Set([...BASE_CATEGORIES, ...recipes.map((r) => r.category)])
+  );
+
   const [name, setName] = useState(recipe.name);
   const [category, setCategory] = useState(recipe.category);
+  const [isNewCategory, setIsNewCategory] = useState(false);
+  const [customCategory, setCustomCategory] = useState("");
   const [image, setImage] = useState(recipe.image || "");
   const [yieldServings, setYieldServings] = useState(recipe.yieldServings);
   const [sellingPriceBatch, setSellingPriceBatch] = useState(
@@ -12,7 +28,7 @@ function EditRecipeForm({ recipe, ingredients, onUpdateRecipe, onCancel }) {
   const [bomList, setBomList] = useState(recipe.bom);
 
   function handleAddRow() {
-    setBomList([...bomList, { ingredientId: "ing-1", qty: 100 }]);
+    setBomList([...bomList, { ingredientId: ingredients[0]?.id || "ing-1", qty: 100 }]);
   }
 
   function handleRemoveRow(indexToRemove) {
@@ -33,9 +49,13 @@ function EditRecipeForm({ recipe, ingredients, onUpdateRecipe, onCancel }) {
   function handleSubmit(e) {
     e.preventDefault();
 
+    const finalCategory = isNewCategory
+      ? customCategory.trim() || category
+      : category;
+
     const updatedFields = {
-      name: name,
-      category: category,
+      name,
+      category: finalCategory,
       image: image.trim() || DEFAULT_IMAGE,
       yieldServings: Number(yieldServings),
       sellingPriceBatch: Number(sellingPriceBatch),
@@ -59,7 +79,7 @@ function EditRecipeForm({ recipe, ingredients, onUpdateRecipe, onCancel }) {
       <form onSubmit={handleSubmit}>
         <div className="row g-3 mb-3">
           <div className="col-md-4">
-            <label className="form-label">Dish Name</label>
+            <label className="form-label fw-semibold">Dish Name</label>
             <input
               type="text"
               className="form-control"
@@ -70,21 +90,43 @@ function EditRecipeForm({ recipe, ingredients, onUpdateRecipe, onCancel }) {
           </div>
 
           <div className="col-md-4">
-            <label className="form-label">Category</label>
-            <select
-              className="form-select"
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-            >
-              <option value="Chilled Desserts">Chilled Desserts</option>
-              <option value="Cookies">Cookies</option>
-              <option value="Baked Pastries">Baked Pastries</option>
-              <option value="Cakes & Cheesecakes">Cakes & Cheesecakes</option>
-            </select>
+            <div className="d-flex justify-content-between align-items-center mb-2">
+              <label className="form-label fw-semibold mb-0">Category</label>
+              <button
+                type="button"
+                className="btn btn-link btn-sm p-0 text-decoration-none"
+                onClick={() => setIsNewCategory(!isNewCategory)}
+              >
+                {isNewCategory ? "Choose Existing" : "+ New Category"}
+              </button>
+            </div>
+
+            {isNewCategory ? (
+              <input
+                type="text"
+                className="form-control"
+                placeholder="e.g. Spreads & Sauces"
+                value={customCategory}
+                onChange={(e) => setCustomCategory(e.target.value)}
+                required
+              />
+            ) : (
+              <select
+                className="form-select"
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+              >
+                {existingCategories.map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat}
+                  </option>
+                ))}
+              </select>
+            )}
           </div>
 
           <div className="col-md-4">
-            <label className="form-label">Menu Image URL</label>
+            <label className="form-label fw-semibold">Menu Image URL</label>
             <input
               type="url"
               className="form-control"
@@ -94,7 +136,7 @@ function EditRecipeForm({ recipe, ingredients, onUpdateRecipe, onCancel }) {
           </div>
 
           <div className="col-md-6">
-            <label className="form-label">Yield (Number of Servings)</label>
+            <label className="form-label fw-semibold">Yield (Number of Servings)</label>
             <input
               type="number"
               className="form-control"
@@ -106,7 +148,7 @@ function EditRecipeForm({ recipe, ingredients, onUpdateRecipe, onCancel }) {
           </div>
 
           <div className="col-md-6">
-            <label className="form-label">Batch Selling Price (KES)</label>
+            <label className="form-label fw-semibold">Batch Selling Price (KES)</label>
             <input
               type="number"
               className="form-control"
