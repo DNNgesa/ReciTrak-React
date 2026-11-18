@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { useErp } from "../context/ErpContext";
+import { useParams, useNavigate } from "react-router-dom";
+import { useRecipes } from "../context/RecipeContext";
+import { useInventory } from "../context/InventoryContext";
 import { API_URL } from "../constants";
 import RecipeCard from "../components/RecipeCard";
 import RecipeBomTable from "../components/RecipeBomTable";
@@ -7,12 +9,15 @@ import NewRecipeForm from "../components/NewRecipeForm";
 import EditRecipeForm from "../components/EditRecipeForm";
 
 function RecipesPage() {
-  const { recipes, setRecipes, ingredients } = useErp();
-  const [selectedId, setSelectedId] = useState("");
+  const { recipes, setRecipes } = useRecipes();
+  const { ingredients } = useInventory();  
+  const { id } = useParams();
+  const navigate = useNavigate();
+
   const [showNewForm, setShowNewForm] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
-  // Calculate total cost of a recipe's Bill of Materials
+  // Calculate total KES cost of a recipe's Bill of Materials
   function getRecipeCost(bom) {
     let totalCost = 0;
 
@@ -27,14 +32,14 @@ function RecipesPage() {
     return totalCost;
   }
 
-  // CREATE: Add newly saved recipe 
+  // CREATE: Add newly saved recipe and navigate to its dynamic URL
   function handleAddRecipe(savedRecipe) {
     setRecipes([...recipes, savedRecipe]);
-    setSelectedId(savedRecipe.id);
     setShowNewForm(false);
+    navigate(`/erp/recipes/${savedRecipe.id}`);
   }
 
-  // UPDATE: Replace edited recipe 
+  // UPDATE: Replace edited recipe in state
   function handleUpdateRecipe(updatedRecipe) {
     setRecipes((prev) =>
       prev.map((r) => (r.id === updatedRecipe.id ? updatedRecipe : r))
@@ -42,7 +47,7 @@ function RecipesPage() {
     setIsEditing(false);
   }
 
-  // DELETE: Remove recipe from db.json and state
+  // DELETE: Remove recipe from db.json and navigate to remaining recipe
   function handleDeleteRecipe(recipeToDelete) {
     const confirmed = window.confirm(
       `Are you sure you want to delete "${recipeToDelete.name}"?`
@@ -54,12 +59,18 @@ function RecipesPage() {
     }).then(() => {
       const remaining = recipes.filter((r) => r.id !== recipeToDelete.id);
       setRecipes(remaining);
-      setSelectedId(remaining[0]?.id || "");
       setIsEditing(false);
+
+      if (remaining.length > 0) {
+        navigate(`/erp/recipes/${remaining[0].id}`);
+      } else {
+        navigate("/erp/recipes");
+      }
     });
   }
 
-  const activeRecipe = recipes.find((r) => r.id === selectedId) || recipes[0];
+  // Match recipe from dynamic URL parameter (:id), or default to the first recipe
+  const activeRecipe = recipes.find((r) => r.id === id) || recipes[0];
 
   return (
     <div className="container pb-5">
@@ -95,8 +106,8 @@ function RecipesPage() {
             recipe={recipe}
             batchCost={getRecipeCost(recipe.bom)}
             isSelected={activeRecipe?.id === recipe.id}
-            onSelect={(id) => {
-              setSelectedId(id);
+            onSelect={(recipeId) => {
+              navigate(`/erp/recipes/${recipeId}`);
               setIsEditing(false);
             }}
           />

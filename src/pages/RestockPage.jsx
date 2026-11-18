@@ -1,9 +1,10 @@
+import { API_URL } from "../constants";
 import { useState } from "react";
-import { useErp } from "../context/ErpContext";
+import { useInventory } from "../context/InventoryContext";
 import RestockRow from "../components/RestockRow";
 
 function RestockPage() {
-  const { ingredients, setIngredients, suppliers } = useErp();
+  const { ingredients, setIngredients, suppliers } = useInventory();
   const [orderPacks, setOrderPacks] = useState({});
 
   const lowStockItems = ingredients.filter(
@@ -25,7 +26,7 @@ function RestockPage() {
     const packs = getPacksToOrder(ing);
     const newStockQty = ing.stockQty + packs * ing.packSize;
 
-    fetch(`http://localhost:4000/ingredients/${ing.id}`, {
+    fetch(`${API_URL}/ingredients/${ing.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ stockQty: newStockQty }),

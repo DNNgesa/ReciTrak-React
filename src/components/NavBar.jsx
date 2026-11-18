@@ -1,8 +1,8 @@
 import { NavLink, Link } from "react-router-dom";
-import { useErp } from "../context/ErpContext";
+import { useInventory } from "../context/InventoryContext";
 
 function NavBar() {
-  const { lowStockCount } = useErp();
+  const { lowStockCount } = useInventory();
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">

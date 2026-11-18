@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from "react-router-dom";
-import { ErpProvider } from "./context/ErpContext";
+import { InventoryProvider } from "./context/InventoryContext";
+import { RecipeProvider } from "./context/RecipeContext";
+import { OrderProvider } from "./context/OrderContext";
 import PublicNavBar from "./components/PublicNavBar";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -24,36 +26,41 @@ function PublicLayout() {
 
 function ErpLayout() {
   return (
-    <div className="d-flex flex-column min-vh-100 bg-light" style={{ paddingTop: "80px" }}>
-      <NavBar />
-      <main className="flex-grow-1">
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
+    <InventoryProvider>
+      <RecipeProvider>
+        <OrderProvider>
+          <div className="d-flex flex-column min-vh-100 bg-light" style={{ paddingTop: "80px" }}>
+            <NavBar />
+            <main className="flex-grow-1">
+              <Outlet />
+            </main>
+            <Footer />
+          </div>
+        </OrderProvider>
+      </RecipeProvider>
+    </InventoryProvider>
   );
 }
 
 function App() {
   return (
-    <ErpProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<PublicLayout />}>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/register" element={<RegisterPage />} />
-          </Route>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<PublicLayout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<RegisterPage />} />
+        </Route>
 
-          <Route path="/erp" element={<ErpLayout />}>
-            <Route index element={<Navigate to="/erp/recipes" replace />} />
-            <Route path="recipes" element={<RecipesPage />} />
-            <Route path="inventory" element={<InventoryPage />} />
-            <Route path="restock" element={<RestockPage />} />
-            <Route path="pos" element={<PosPage />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
-    </ErpProvider>
+        <Route path="/erp" element={<ErpLayout />}>
+          <Route index element={<Navigate to="/erp/recipes" replace />} />
+          <Route path="recipes" element={<RecipesPage />} />
+          <Route path="recipes/:id" element={<RecipesPage />} />
+          <Route path="inventory" element={<InventoryPage />} />
+          <Route path="restock" element={<RestockPage />} />
+          <Route path="pos" element={<PosPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

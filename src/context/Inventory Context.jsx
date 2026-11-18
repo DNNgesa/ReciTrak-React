@@ -1,17 +1,15 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { API_URL } from "../constants";
 
-const ErpContext = createContext();
+const InventoryContext = createContext();
 
-export function useErp() {
-  return useContext(ErpContext);
+export function useInventory() {
+  return useContext(InventoryContext);
 }
 
-export function ErpProvider({ children }) {
+export function InventoryProvider({ children }) {
   const [suppliers, setSuppliers] = useState([]);
   const [ingredients, setIngredients] = useState([]);
-  const [recipes, setRecipes] = useState([]);
-  const [orders, setOrders] = useState([]);
 
   useEffect(() => {
     fetch(`${API_URL}/suppliers`)
@@ -21,31 +19,23 @@ export function ErpProvider({ children }) {
     fetch(`${API_URL}/ingredients`)
       .then((res) => res.json())
       .then((data) => setIngredients(data));
-
-    fetch(`${API_URL}/recipes`)
-      .then((res) => res.json())
-      .then((data) => setRecipes(data));
-
-    fetch(`${API_URL}/orders`)
-      .then((res) => res.json())
-      .then((data) => setOrders(data));
   }, []);
 
-  // Automatically calculate low-stock count for the NavBar badge
   const lowStockCount = ingredients.filter(
     (item) => item.stockQty <= item.reorderLevel
   ).length;
 
   const value = {
     suppliers,
+    setSuppliers,
     ingredients,
     setIngredients,
-    recipes,
-    setRecipes,
-    orders,
-    setOrders,
     lowStockCount,
   };
 
-  return <ErpContext.Provider value={value}>{children}</ErpContext.Provider>;
+  return (
+    <InventoryContext.Provider value={value}>
+      {children}
+    </InventoryContext.Provider>
+  );
 }

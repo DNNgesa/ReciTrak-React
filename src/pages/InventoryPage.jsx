@@ -1,10 +1,9 @@
 import { useState } from "react";
-import { useErp } from "../context/ErpContext";
+import { useInventory } from "../context/InventoryContext";
 import IngredientRow from "../components/IngredientRow";
 
 function InventoryPage() {
-  const { ingredients, setIngredients, suppliers } = useErp();
-  const [search, setSearch] = useState("");
+const { ingredients, setIngredients, suppliers } = useInventory();  const [search, setSearch] = useState("");
   const [supplierFilter, setSupplierFilter] = useState("All");
 
   function getSupplierName(supplierId) {

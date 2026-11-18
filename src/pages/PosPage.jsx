@@ -1,10 +1,14 @@
+import { API_URL } from "../constants";
 import { useState } from "react";
-import { useErp } from "../context/ErpContext";
+import { useRecipes } from "../context/RecipeContext";
+import { useInventory } from "../context/InventoryContext";
+import { useOrders } from "../context/OrderContext";
 import PosMenuCard from "../components/PosMenuCard";
 
 function PosPage() {
-  const { recipes, ingredients, setIngredients, orders, setOrders } =
-    useErp();
+  const { recipes } = useRecipes();
+  const { ingredients, setIngredients } = useInventory();
+  const { orders, setOrders } = useOrders();
   const [message, setMessage] = useState("");
 
   function canMakeRecipe(recipe) {
@@ -24,7 +28,7 @@ function PosPage() {
       const ing = ingredients.find((i) => i.id === item.ingredientId);
       const updatedStock = ing.stockQty - item.qty;
 
-      return fetch(`http://localhost:4000/ingredients/${ing.id}`, {
+      return fetch(`${API_URL}/ingredients/${ing.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ stockQty: updatedStock }),
@@ -43,7 +47,7 @@ function PosPage() {
         timestamp: new Date().toLocaleTimeString(),
       };
 
-      fetch("http://localhost:4000/orders", {
+      fetch(`${API_URL}/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder),
