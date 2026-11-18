@@ -540,6 +540,36 @@
           "qty": 5
         }
       ]
+    },
+    {
+      "id": "RgNHMkj2nCo",
+      "name": "Classic Butter Shortbread Cookies",
+      "category": "Tea Time Classics",
+      "image": "https://www.crazyforcrust.com/wp-content/uploads/2022/10/shortbread-7-768x1152.jpg",
+      "yieldServings": 16,
+      "sellingPriceBatch": 1800,
+      "bom": [
+        {
+          "ingredientId": "ing-1",
+          "qty": 260
+        },
+        {
+          "ingredientId": "ing-4",
+          "qty": 225
+        },
+        {
+          "ingredientId": "ing-2",
+          "qty": 65
+        },
+        {
+          "ingredientId": "ing-16",
+          "qty": 3
+        },
+        {
+          "ingredientId": "ing-13",
+          "qty": 5
+        }
+      ]
     }
   ],
   "orders": [
