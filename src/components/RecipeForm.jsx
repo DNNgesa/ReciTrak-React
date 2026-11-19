@@ -3,7 +3,7 @@ import { useRecipes } from "../context/RecipeContext";
 import { useInventory } from "../context/InventoryContext";
 import { saveRecipeWithIngredients } from "../utils/recipeApi";
 import BomRowInput from "./BomRowInput";
-import { DEFAULT_IMAGE } from "../constants";
+import { defaultImg } from "../constants";
 
 const BASE_CATEGORIES = ["Chilled Desserts", "Cookies", "Baked Pastries", "Cakes & Cheesecakes"];
 
@@ -89,7 +89,7 @@ function RecipeForm({ initialRecipe = null, ingredients, onSaveRecipe, onCancel 
 
           <div className="col-md-4">
             <label className="form-label fw-semibold">Menu Image URL</label>
-            <input type="url" className="form-control" value={photoUrl} onChange={(e) => setPhotoUrl(e.target.value)} placeholder= {DEFAULT_IMAGE} />
+            <input type="url" className="form-control" value={photoUrl} onChange={(e) => setPhotoUrl(e.target.value)} placeholder= {defaultImg} />
           </div>
 
           <div className="col-md-6">

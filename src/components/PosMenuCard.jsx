@@ -1,13 +1,13 @@
-import { DEFAULT_IMAGE } from "../constants";
+import { defaultImg } from "../constants";
 
 function PosMenuCard({ recipe, inStock, onSell }) {
   return (
     <div className="col-md-6">
       <div className="card h-100 shadow-sm">
         <img
-        src={recipe.image || DEFAULT_IMAGE}
+        src={recipe.image || defaultImg}
         onError={(e) => {
-          e.currentTarget.src = DEFAULT_IMAGE;
+          e.currentTarget.src = defaultImg;
         }}
         className="card-img-top"
         alt={recipe.name}

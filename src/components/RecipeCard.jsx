@@ -1,4 +1,4 @@
-import { DEFAULT_IMAGE } from "../constants";
+import { defaultImg } from "../constants";
 
 function RecipeCard({ recipe, batchCost, isSelected, onSelect }) {
   const foodCostPercent = (
@@ -16,9 +16,9 @@ function RecipeCard({ recipe, batchCost, isSelected, onSelect }) {
         onClick={() => onSelect(recipe.id)}
       >
         <img
-          src={recipe.image || DEFAULT_IMAGE}
+          src={recipe.image || defaultImg}
           onError={(e) => {
-            e.currentTarget.src = DEFAULT_IMAGE;
+            e.currentTarget.src = defaultImg;
           }}
           className="card-img-top"
           alt={recipe.name}

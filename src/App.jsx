@@ -56,7 +56,6 @@ function App() {
           <Route index element={<Navigate to="/erp/recipes" replace />} />
           <Route path="recipes" element={<RecipesPage />} />
           <Route path="recipes/:id" element={<RecipeDetailPage />} />
-          <Route path="recipes/:id" element={<RecipesPage />} />
           <Route path="inventory" element={<InventoryPage />} />
           <Route path="restock" element={<RestockPage />} />
           <Route path="pos" element={<PosPage />} />
