@@ -69,7 +69,6 @@ function RecipesPage() {
     });
   }
 
-  // Match recipe from dynamic URL parameter (:id), or default to the first recipe
   const activeRecipe = recipes.find((r) => r.id === id) || recipes[0];
 
   return (
