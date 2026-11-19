@@ -3,6 +3,7 @@ import { useRecipes } from "../context/RecipeContext";
 import { useInventory } from "../context/InventoryContext";
 import { saveRecipeWithIngredients } from "../utils/recipeApi";
 import BomRowInput from "./BomRowInput";
+import { DEFAULT_IMAGE } from "../constants";
 
 const BASE_CATEGORIES = ["Chilled Desserts", "Cookies", "Baked Pastries", "Cakes & Cheesecakes"];
 
@@ -88,7 +89,7 @@ function RecipeForm({ initialRecipe = null, ingredients, onSaveRecipe, onCancel 
 
           <div className="col-md-4">
             <label className="form-label fw-semibold">Menu Image URL</label>
-            <input type="url" className="form-control" value={photoUrl} onChange={(e) => setPhotoUrl(e.target.value)} placeholder="https://example.com" />
+            <input type="url" className="form-control" value={photoUrl} onChange={(e) => setPhotoUrl(e.target.value)} placeholder= {DEFAULT_IMAGE} />
           </div>
 
           <div className="col-md-6">
@@ -118,7 +119,7 @@ function RecipeForm({ initialRecipe = null, ingredients, onSaveRecipe, onCancel 
         ))}
 
         <div className="d-flex gap-2 mt-3">
-          <button type="button" className="btn btn-outline-secondary btn-sm" onClick={() => setBomList([...bomList, emptyRow()])}>+ Add Ingredient Row</button>
+          <button type="button" className="btn btn-outline-secondary btn-sm" onClick={() => setBomList([...bomList, emptyRow()])}>Add Ingredient Row</button>
           <div className="ms-auto d-flex gap-2">
             {onCancel && <button type="button" className="btn btn-outline-secondary" onClick={onCancel}>Cancel</button>}
             <button type="submit" className={`btn fw-semibold ${isEditMode ? "btn-warning" : "btn-success"}`}>

@@ -17,8 +17,11 @@ function RecipeCard({ recipe, batchCost, isSelected, onSelect }) {
       >
         <img
           src={recipe.image || DEFAULT_IMAGE}
-          alt={recipe.name}
+          onError={(e) => {
+            e.currentTarget.src = DEFAULT_IMAGE;
+          }}
           className="card-img-top"
+          alt={recipe.name}
           style={{ height: "160px", objectFit: "cover" }}
         />
 

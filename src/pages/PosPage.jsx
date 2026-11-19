@@ -1,15 +1,17 @@
-import { API_URL } from "../constants";
 import { useState } from "react";
+import { API_URL } from "../constants";
 import { useRecipes } from "../context/RecipeContext";
 import { useInventory } from "../context/InventoryContext";
 import { useOrders } from "../context/OrderContext";
 import PosMenuCard from "../components/PosMenuCard";
+import CategoryFilterBar from "../components/CategoryFilterBar";
 
 function PosPage() {
   const { recipes } = useRecipes();
   const { ingredients, setIngredients } = useInventory();
   const { orders, setOrders } = useOrders();
   const [message, setMessage] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   function canMakeRecipe(recipe) {
     return recipe.bom.every((item) => {
@@ -64,6 +66,12 @@ function PosPage() {
 
   const totalSales = orders.reduce((sum, order) => sum + order.revenueKes, 0);
 
+  const categories = ["All", ...new Set(recipes.map((r) => r.category))];
+  const filteredRecipes =
+    selectedCategory === "All"
+      ? recipes
+      : recipes.filter((r) => r.category === selectedCategory);
+
   return (
     <div className="container pb-5">
       <div className="d-flex justify-content-between align-items-center mb-4">
@@ -93,10 +101,16 @@ function PosPage() {
         </div>
       )}
 
+      <CategoryFilterBar
+      categories={categories}
+      selectedCategory={selectedCategory}
+      onSelectCategory={setSelectedCategory}
+      />
+
       <div className="row g-4">
         <div className="col-lg-8">
           <div className="row g-3">
-            {recipes.map((recipe) => (
+            {filteredRecipes.map((recipe) => (
               <PosMenuCard
                 key={recipe.id}
                 recipe={recipe}
@@ -111,9 +125,7 @@ function PosPage() {
           <div className="card shadow-sm p-3">
             <h2 className="h5 fw-bold mb-3">Recent Sales</h2>
             {orders.length === 0 ? (
-              <p className="text-muted small mb-0">
-                No sales yet. 
-              </p>
+              <p className="text-muted small mb-0">No sales yet.</p>
             ) : (
               <ul className="list-group list-group-flush">
                 {orders.map((order) => (

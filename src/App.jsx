@@ -11,6 +11,7 @@ import RecipesPage from "./pages/RecipesPage";
 import InventoryPage from "./pages/InventoryPage";
 import RestockPage from "./pages/RestockPage";
 import PosPage from "./pages/PosPage";
+import RecipeDetailPage from "./pages/RecipeDetailPage";
 
 function PublicLayout() {
   return (
@@ -54,6 +55,7 @@ function App() {
         <Route path="/erp" element={<ErpLayout />}>
           <Route index element={<Navigate to="/erp/recipes" replace />} />
           <Route path="recipes" element={<RecipesPage />} />
+          <Route path="recipes/:id" element={<RecipeDetailPage />} />
           <Route path="recipes/:id" element={<RecipesPage />} />
           <Route path="inventory" element={<InventoryPage />} />
           <Route path="restock" element={<RestockPage />} />

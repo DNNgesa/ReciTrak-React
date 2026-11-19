@@ -5,11 +5,15 @@ function PosMenuCard({ recipe, inStock, onSell }) {
     <div className="col-md-6">
       <div className="card h-100 shadow-sm">
         <img
-          src={recipe.image || DEFAULT_IMAGE}
-          alt={recipe.name}
-          className="card-img-top"
-          style={{ height: "160px", objectFit: "cover" }}
+        src={recipe.image || DEFAULT_IMAGE}
+        onError={(e) => {
+          e.currentTarget.src = DEFAULT_IMAGE;
+        }}
+        className="card-img-top"
+        alt={recipe.name}
+        style={{ height: "140px", objectFit: "cover" }}
         />
+
 
         <div className="card-body d-flex flex-column">
           <div className="d-flex justify-content-between mb-2">
