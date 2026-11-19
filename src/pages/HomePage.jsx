@@ -21,9 +21,6 @@ function HomePage() {
         ></div>
 
         <div className="container position-relative py-5" style={{ zIndex: 2 }}>
-          <span className="badge bg-warning text-dark mb-2 px-3 py-2">
-            Production & Supply Chain Intelligence
-          </span>
           <h1 className="display-4 fw-bold mb-3">Your Recipe For Success</h1>
           <p className="lead mx-auto mb-4" style={{ maxWidth: "680px" }}>
             Transform standardized recipes, live supplier rates, and outlet sales
