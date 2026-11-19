@@ -5,8 +5,8 @@ import { useInventory } from "../context/InventoryContext";
 import { API_URL } from "../constants";
 import RecipeCard from "../components/RecipeCard";
 import RecipeBomTable from "../components/RecipeBomTable";
-import NewRecipeForm from "../components/NewRecipeForm";
-import EditRecipeForm from "../components/EditRecipeForm";
+import RecipeForm from "../components/RecipeForm";
+
 
 function RecipesPage() {
   const { recipes, setRecipes } = useRecipes();
@@ -93,11 +93,13 @@ function RecipesPage() {
       </div>
 
       {showNewForm && (
-        <NewRecipeForm
-          ingredients={ingredients}
-          onAddRecipe={handleAddRecipe}
+        <RecipeForm
+        ingredients={ingredients}
+        onSaveRecipe={handleAddRecipe}
+        onCancel={() => setShowNewForm(false)}
         />
-      )}
+)}
+
 
       <div className="row g-3 mb-4">
         {recipes.map((recipe) => (
@@ -115,13 +117,14 @@ function RecipesPage() {
       </div>
 
       {isEditing && activeRecipe ? (
-        <EditRecipeForm
-          recipe={activeRecipe}
-          ingredients={ingredients}
-          onUpdateRecipe={handleUpdateRecipe}
-          onCancel={() => setIsEditing(false)}
+        <RecipeForm
+        initialRecipe={activeRecipe}
+        ingredients={ingredients}
+        onSaveRecipe={handleUpdateRecipe}
+        onCancel={() => setIsEditing(false)}
         />
       ) : (
+
         <RecipeBomTable
           recipe={activeRecipe}
           ingredients={ingredients}
