@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { API_URL } from "../constants";
+import { databaseApi } from "../constants";
 
 const InventoryContext = createContext();
 
@@ -12,11 +12,11 @@ export function InventoryProvider({ children }) {
   const [ingredients, setIngredients] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_URL}/suppliers`)
+    fetch(`${databaseApi}/suppliers`)
       .then((res) => res.json())
       .then((data) => setSuppliers(data));
 
-    fetch(`${API_URL}/ingredients`)
+    fetch(`${databaseApi}/ingredients`)
       .then((res) => res.json())
       .then((data) => setIngredients(data));
   }, []);

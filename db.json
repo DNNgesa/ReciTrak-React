@@ -554,7 +554,7 @@
     },
     {
       "id": "RgNHMkj2nCo",
-      "name": "Classic Butter Shortbread Cookies",
+      "name": "Classic Butter Shortbread",
       "category": "Tea Time Classics",
       "image": "https://www.crazyforcrust.com/wp-content/uploads/2022/10/shortbread-7-768x1152.jpg",
       "yieldServings": 16,
@@ -635,9 +635,6 @@
       "timestamp": "15:07:07"
     }
   ],
-  "demoRequests": [
-
-  ],
-  
-  "$schema": ["./node_modules/json-server/schema.json"]
+  "demoRequests": [],
+  "$schema": "./node_modules/json-server/schema.json"
 }

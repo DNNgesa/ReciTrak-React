@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { API_URL } from "../constants";
+import { databaseApi } from "../constants";
 import { useRecipes } from "../context/RecipeContext";
 import { useInventory } from "../context/InventoryContext";
 import { useOrders } from "../context/OrderContext";
@@ -30,7 +30,7 @@ function PosPage() {
       const ing = ingredients.find((i) => i.id === item.ingredientId);
       const updatedStock = ing.stockQty - item.qty;
 
-      return fetch(`${API_URL}/ingredients/${ing.id}`, {
+      return fetch(`${databaseApi}/ingredients/${ing.id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ stockQty: updatedStock }),
@@ -49,7 +49,7 @@ function PosPage() {
         timestamp: new Date().toLocaleTimeString(),
       };
 
-      fetch(`${API_URL}/orders`, {
+      fetch(`${databaseApi}/orders`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newOrder),

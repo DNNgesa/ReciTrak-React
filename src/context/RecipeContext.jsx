@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { API_URL } from "../constants";
+import { databaseApi } from "../constants";
 
 const RecipeContext = createContext();
 
@@ -11,7 +11,7 @@ export function RecipeProvider({ children }) {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_URL}/recipes`)
+    fetch(`${databaseApi}/recipes`)
       .then((res) => res.json())
       .then((data) => setRecipes(data));
   }, []);

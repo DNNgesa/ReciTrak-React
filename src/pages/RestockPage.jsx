@@ -1,4 +1,4 @@
-import { API_URL } from "../constants";
+import { databaseApi } from "../constants";
 import { useState } from "react";
 import { useInventory } from "../context/InventoryContext";
 import RestockRow from "../components/RestockRow";
@@ -26,7 +26,7 @@ function RestockPage() {
     const packs = getPacksToOrder(ing);
     const newStockQty = ing.stockQty + packs * ing.packSize;
 
-    fetch(`${API_URL}/ingredients/${ing.id}`, {
+    fetch(`${databaseApi}/ingredients/${ing.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ stockQty: newStockQty }),

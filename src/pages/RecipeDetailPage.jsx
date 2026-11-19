@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useRecipes } from "../context/RecipeContext";
 import { useInventory } from "../context/InventoryContext";
-import { API_URL } from "../constants";
+import { databaseApi } from "../constants";
 import RecipeBomTable from "../components/RecipeBomTable";
 import RecipeForm from "../components/RecipeForm";
 
@@ -36,7 +36,7 @@ function RecipeDetailPage() {
     );
     if (!confirmed) return;
 
-    fetch(`${API_URL}/recipes/${recipeToDelete.id}`, {
+    fetch(`${databaseApi}/recipes/${recipeToDelete.id}`, {
       method: "DELETE",
     }).then(() => {
       setRecipes(recipes.filter((r) => r.id !== recipeToDelete.id));

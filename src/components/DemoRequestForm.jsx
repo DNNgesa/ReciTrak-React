@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { API_URL } from "../constants";
+import { databaseApi } from "../constants";
 
 function DemoRequestForm() {
   const [fullName, setFullName] = useState("");
@@ -21,7 +21,7 @@ function DemoRequestForm() {
       submittedAt: new Date().toLocaleString(),
     };
 
-    fetch(`${API_URL}/demoRequests`, {
+    fetch(`${databaseApi}/demoRequests`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newRequest),

@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import { API_URL } from "../constants";
+import { databaseApi } from "../constants";
 
 const OrderContext = createContext();
 
@@ -11,7 +11,7 @@ export function OrderProvider({ children }) {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    fetch(`${API_URL}/orders`)
+    fetch(`${databaseApi}/orders`)
       .then((res) => res.json())
       .then((data) => setOrders(data));
   }, []);

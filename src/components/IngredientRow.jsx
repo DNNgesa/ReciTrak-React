@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { API_URL } from "../constants";
+import { databaseApi } from "../constants";
 
 function IngredientRow({ ingredient, supplierName, onUpdateIngredient }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -17,7 +17,7 @@ function IngredientRow({ ingredient, supplierName, onUpdateIngredient }) {
     const parsedPrice = Number(newPrice);
     if (parsedPrice <= 0) return;
 
-    fetch(`${API_URL}/ingredients/${ingredient.id}`, {
+    fetch(`${databaseApi}/ingredients/${ingredient.id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

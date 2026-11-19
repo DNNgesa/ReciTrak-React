@@ -1,4 +1,4 @@
-import { API_URL, DEFAULT_IMAGE } from "../constants";
+import { databaseApi, defaultImg } from "../constants";
 
 export async function saveRecipeWithIngredients({
   initialRecipe,
@@ -17,7 +17,7 @@ export async function saveRecipeWithIngredients({
     if (!row.isNew && row.qty > 0) {
       finalBom.push({ ingredientId: row.ingredientId, qty: row.qty });
     } else if (row.isNew && row.qty > 0) {
-      const res = await fetch(`${API_URL}/ingredients`, {
+      const res = await fetch(`${databaseApi}/ingredients`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -39,7 +39,7 @@ export async function saveRecipeWithIngredients({
   }
 
   const isEdit = Boolean(initialRecipe);
-  const url = isEdit ? `${API_URL}/recipes/${initialRecipe.id}` : `${API_URL}/recipes`;
+  const url = isEdit ? `${databaseApi}/recipes/${initialRecipe.id}` : `${databaseApi}/recipes`;
 
   const recipeRes = await fetch(url, {
     method: isEdit ? "PATCH" : "POST",
@@ -48,7 +48,7 @@ export async function saveRecipeWithIngredients({
       ...(isEdit ? {} : { id: `rec-${Date.now()}` }),
       name: name.trim(),
       category,
-      image: image.trim() || DEFAULT_IMAGE,
+      image: image.trim() || defaultImg,
       yieldServings: Number(yieldServings),
       sellingPriceBatch: Number(sellingPriceBatch),
       bom: finalBom,
