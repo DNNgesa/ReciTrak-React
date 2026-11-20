@@ -249,8 +249,8 @@
       "supplierId": "sup-2",
       "unit": "g",
       "packSize": 200,
-      "currentPackPrice": 775,
-      "previousPackPrice": 740,
+      "currentPackPrice": 770,
+      "previousPackPrice": 775,
       "stockQty": 340,
       "reorderLevel": 200
     },
@@ -342,7 +342,7 @@
         },
         {
           "ingredientId": "ing-11",
-          "qty": 15
+          "qty": 10
         }
       ]
     },
@@ -575,32 +575,6 @@
         {
           "ingredientId": "ing-16",
           "qty": 3
-        },
-        {
-          "ingredientId": "ing-13",
-          "qty": 5
-        }
-      ]
-    },
-    {
-      "id": "mHDT9s7j3YY",
-      "name": "Rich Dark Chocolate Truffles",
-      "category": "Confections & Truffles",
-      "image": "https://www.happyfoodstube.com/wp-content/uploads/2016/12/dark-chocolate-truffles-1.jpg",
-      "yieldServings": 20,
-      "sellingPriceBatch": 2500,
-      "bom": [
-        {
-          "ingredientId": "ing-11",
-          "qty": 60
-        },
-        {
-          "ingredientId": "ing-4",
-          "qty": 50
-        },
-        {
-          "ingredientId": "YQj7xZdAB-w",
-          "qty": 250
         },
         {
           "ingredientId": "ing-13",
