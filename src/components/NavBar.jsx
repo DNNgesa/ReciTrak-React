@@ -52,6 +52,15 @@ function NavBar() {
             <i className="bi bi-cash-register me-1"></i> POS
           </NavLink>
 
+          <NavLink
+          to="/erp/suppliers"
+          className={({ isActive }) =>
+            "nav-link px-3 rounded " + (isActive ? "active bg-primary text-white fw-semibold" : "")
+            }
+          >
+            <i className="bi bi-building-add me-1"></i> Suppliers
+          </NavLink>
+
           <Link to="/" className="btn btn-outline-light btn-sm ms-2">
             <i className="bi bi-house-door me-1"></i> Home
           </Link>

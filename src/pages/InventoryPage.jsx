@@ -17,12 +17,14 @@ const { ingredients, setIngredients, suppliers } = useInventory();  const [searc
     );
   }
 
-  const displayedIngredients = ingredients.filter((ing) => {
-    const matchesName = ing.name.toLowerCase().includes(search.toLowerCase());
-    const matchesSupplier =
+    const displayedIngredients = ingredients.filter((ing) => {
+      const isKitchenItem = ing.inKitchen !== false;
+      const matchesName = ing.name.toLowerCase().includes(search.toLowerCase());
+      const matchesSupplier =
       supplierFilter === "All" || ing.supplierId === supplierFilter;
-    return matchesName && matchesSupplier;
-  });
+      return isKitchenItem && matchesName && matchesSupplier;
+    });
+
 
   return (
     <div className="container pb-5">

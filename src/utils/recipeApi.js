@@ -15,6 +15,11 @@ export async function saveRecipeWithIngredients({
 
   for (const row of bomList) {
     if (!row.isNew && row.qty > 0) {
+      await fetch(`${databaseApi}/ingredients/${row.ingredientId}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ inKitchen: true }),
+      });
       finalBom.push({ ingredientId: row.ingredientId, qty: row.qty });
     } else if (row.isNew && row.qty > 0) {
       const res = await fetch(`${databaseApi}/ingredients`, {
@@ -30,6 +35,7 @@ export async function saveRecipeWithIngredients({
           previousPackPrice: row.packPrice || 100,
           stockQty: 0,
           reorderLevel: row.packSize || 500,
+          inKitchen: true,
         }),
       });
       const savedIng = await res.json();

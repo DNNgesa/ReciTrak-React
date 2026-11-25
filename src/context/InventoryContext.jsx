@@ -20,9 +20,9 @@ export function InventoryProvider({ children }) {
       .then((res) => res.json())
       .then((data) => setIngredients(data));
   }, []);
-
+  
   const lowStockCount = ingredients.filter(
-    (item) => item.stockQty <= item.reorderLevel
+    (item) => item.inKitchen !== false && item.stockQty <= item.reorderLevel
   ).length;
 
   const value = {

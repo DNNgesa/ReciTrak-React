@@ -18,8 +18,9 @@ export async function getDeliveryQuote(origin, supplier) {
   const { baseFeeKes, ratePerKmKes } = deliveryPricing;
 
   try {
-    const url = `https://project-osrm.org{origin.lng},${origin.lat};${supplier.lng},${supplier.lat}?overview=false`;
-    const res = await fetch(url);
+    const baseUrl = "https://router.project-osrm.org/route/v1/driving";
+    const coords = `${origin.lng},${origin.lat};${supplier.lng},${supplier.lat}`;
+    const res = await fetch(`${baseUrl}/${coords}?overview=false`);
     const data = await res.json();
 
     if (!data.routes || data.routes.length === 0) {

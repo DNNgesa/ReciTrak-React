@@ -53,12 +53,17 @@ function RecipeForm({ initialRecipe = null, ingredients, onSaveRecipe, onCancel 
         bomList,
         defaultSupplierId: suppliers[0]?.id,
     });
+    
+    
+    const usedIds = new Set(savedRecipe.bom.map((b) => b.ingredientId));
+    setIngredients((prev) => [
+      ...prev.map((ing) =>
+        usedIds.has(ing.id) ? { ...ing, inKitchen: true } : ing
+    ),
+    ...newlyCreatedIngredients,
+  ]);
+  onSaveRecipe(savedRecipe);
 
-
-    if (newlyCreatedIngredients.length > 0) {
-      setIngredients((prev) => [...prev, ...newlyCreatedIngredients]);
-    }
-    onSaveRecipe(savedRecipe);
   }
 
   return (

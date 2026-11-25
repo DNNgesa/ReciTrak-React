@@ -11,7 +11,7 @@ function RestockPage() {
   const [quotesBySupplier, setQuotesBySupplier] = useState({});
 
   const lowStockItems = ingredients.filter(
-    (ing) => ing.stockQty <= ing.reorderLevel
+    (ing) => ing.inKitchen !== false && ing.stockQty <= ing.reorderLevel
   );
 
   useEffect(() => {

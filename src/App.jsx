@@ -12,6 +12,7 @@ import InventoryPage from "./pages/InventoryPage";
 import RestockPage from "./pages/RestockPage";
 import PosPage from "./pages/PosPage";
 import RecipeDetailPage from "./pages/RecipeDetailPage";
+import SupplierPortalPage from "./pages/SupplierPortalPage";
 
 function PublicLayout() {
   return (
@@ -59,6 +60,7 @@ function App() {
           <Route path="inventory" element={<InventoryPage />} />
           <Route path="restock" element={<RestockPage />} />
           <Route path="pos" element={<PosPage />} />
+          <Route path="suppliers" element={<SupplierPortalPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

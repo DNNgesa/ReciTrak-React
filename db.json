@@ -1,37 +1,77 @@
 {
   "suppliers": [
     {
-    "id": "sup-1",
-    "name": "Carrefour (Sarit Centre)",
-    "leadTimeDays": 1,
-    "address": "Karuna Rd, Westlands, Nairobi",
-    "lat": -1.2615,
-    "lng": 36.8021
-  },
-  {
-    "id": "sup-2",
-    "name": "Wakulima Fresh Produce",
-    "leadTimeDays": 1,
-    "address": "Haile Selassie Ave, CBD, Nairobi",
-    "lat": -1.2884,
-    "lng": 36.8286
-  },
-  {
-    "id": "sup-3",
-    "name": "East African Packaging & Baking Co.",
-    "leadTimeDays": 2,
-    "address": "Mombasa Rd, Industrial Area, Nairobi",
-    "lat": -1.3192,
-    "lng": 36.8548
-  },
-  {
-    "id": "sup-4",
-    "name": "Nairobi Dairy & Cold Chain",
-    "leadTimeDays": 1,
-    "address": "Enterprise Rd, Industrial Area, Nairobi",
-    "lat": -1.3032,
-    "lng": 36.8465
-  }
+      "id": "sup-1",
+      "name": "Carrefour (Sarit Centre)",
+      "leadTimeDays": 1,
+      "address": "Karuna Rd, Westlands, Nairobi",
+      "lat": -1.2615,
+      "lng": 36.8021
+    },
+    {
+      "id": "sup-2",
+      "name": "Wakulima Fresh Produce",
+      "leadTimeDays": 1,
+      "address": "Haile Selassie Ave, CBD, Nairobi",
+      "lat": -1.2884,
+      "lng": 36.8286
+    },
+    {
+      "id": "sup-3",
+      "name": "East African Packaging & Baking Co.",
+      "leadTimeDays": 2,
+      "address": "Mombasa Rd, Industrial Area, Nairobi",
+      "lat": -1.3192,
+      "lng": 36.8548
+    },
+    {
+      "id": "sup-4",
+      "name": "Nairobi Dairy & Cold Chain",
+      "leadTimeDays": 1,
+      "address": "Enterprise Rd, Industrial Area, Nairobi",
+      "lat": -1.3032,
+      "lng": 36.8465
+    },
+    {
+      "id": "uHlXnP3ka4Q",
+      "name": "Limuru Fresh Dairies Ltd.",
+      "address": "Limuru Road, Ruaka, Nairobi",
+      "leadTimeDays": 1,
+      "lat": -1.2094,
+      "lng": 36.7801
+    },
+    {
+      "id": "y6KSrVKiB3Y",
+      "name": "Purato East Africa",
+      "address": "Baba Dogo Road, Ruaraka, Nairobi",
+      "leadTimeDays": 2,
+      "lat": -1.2462,
+      "lng": 36.8856
+    },
+    {
+      "id": "Fr36ojX2TqM",
+      "name": "Top Serve Ltd. (Baking Supplies)",
+      "address": "Kijabe Street, CBD, Nairobi",
+      "leadTimeDays": 1,
+      "lat": -1.2778,
+      "lng": 36.8185
+    },
+    {
+      "id": "n5cbpVpsxTo",
+      "name": "City Park Fresh Produce Market",
+      "address": "Limuru Road, Parklands, Nairobi",
+      "leadTimeDays": 1,
+      "lat": -1.2625,
+      "lng": 36.8235
+    },
+    {
+      "id": "XREUYa00yMc",
+      "name": "Pembe Flour Mills Wholesale",
+      "address": "Lunga Lunga Road, Industrial Area, Nairobi",
+      "leadTimeDays": 2,
+      "lat": -1.3095,
+      "lng": 36.8632
+    }
   ],
   "ingredients": [
     {
