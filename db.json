@@ -1,26 +1,37 @@
 {
   "suppliers": [
     {
-      "id": "sup-1",
-      "name": "Carrefour Kenya (Nairobi)",
-      "category": "Supermarket & Bulk Grocery",
-      "leadTimeDays": 1,
-      "contact": "orders@carrefour.ke"
-    },
-    {
-      "id": "sup-2",
-      "name": "Browns Food Co. (Limuru)",
-      "category": "Artisanal Dairy & Cheese",
-      "leadTimeDays": 2,
-      "contact": "wholesale@brownsfoodco.com"
-    },
-    {
-      "id": "sup-3",
-      "name": "Unga Group Wholesale",
-      "category": "Flour & Dry Goods",
-      "leadTimeDays": 2,
-      "contact": "sales@ungagroup.com"
-    }
+    "id": "sup-1",
+    "name": "Carrefour (Sarit Centre)",
+    "leadTimeDays": 1,
+    "address": "Karuna Rd, Westlands, Nairobi",
+    "lat": -1.2615,
+    "lng": 36.8021
+  },
+  {
+    "id": "sup-2",
+    "name": "Wakulima Fresh Produce",
+    "leadTimeDays": 1,
+    "address": "Haile Selassie Ave, CBD, Nairobi",
+    "lat": -1.2884,
+    "lng": 36.8286
+  },
+  {
+    "id": "sup-3",
+    "name": "East African Packaging & Baking Co.",
+    "leadTimeDays": 2,
+    "address": "Mombasa Rd, Industrial Area, Nairobi",
+    "lat": -1.3192,
+    "lng": 36.8548
+  },
+  {
+    "id": "sup-4",
+    "name": "Nairobi Dairy & Cold Chain",
+    "leadTimeDays": 1,
+    "address": "Enterprise Rd, Industrial Area, Nairobi",
+    "lat": -1.3032,
+    "lng": 36.8465
+  }
   ],
   "ingredients": [
     {
