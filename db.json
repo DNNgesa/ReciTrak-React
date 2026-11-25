@@ -31,7 +31,7 @@
       "packSize": 2000,
       "currentPackPrice": 175,
       "previousPackPrice": 176,
-      "stockQty": 5494,
+      "stockQty": 4974,
       "reorderLevel": 2000
     },
     {
@@ -42,7 +42,7 @@
       "packSize": 2000,
       "currentPackPrice": 302,
       "previousPackPrice": 290,
-      "stockQty": 2917,
+      "stockQty": 2787,
       "reorderLevel": 1500
     },
     {
@@ -64,7 +64,7 @@
       "packSize": 500,
       "currentPackPrice": 879,
       "previousPackPrice": 820,
-      "stockQty": 1220,
+      "stockQty": 770,
       "reorderLevel": 500
     },
     {
@@ -163,7 +163,7 @@
       "packSize": 200,
       "currentPackPrice": 259,
       "previousPackPrice": 245,
-      "stockQty": 355,
+      "stockQty": 345,
       "reorderLevel": 100
     },
     {
@@ -196,7 +196,7 @@
       "packSize": 1000,
       "currentPackPrice": 47,
       "previousPackPrice": 45,
-      "stockQty": 981,
+      "stockQty": 975,
       "reorderLevel": 250
     },
     {
@@ -607,6 +607,18 @@
       "recipeName": "Perfect Easy Chocolate Cake",
       "revenueKes": 4800,
       "timestamp": "15:07:07"
+    },
+    {
+      "id": "Ebsma1AaK4g",
+      "recipeName": "Classic Butter Shortbread",
+      "revenueKes": 1800,
+      "timestamp": "17:08:12"
+    },
+    {
+      "id": "X3gloek2cPQ",
+      "recipeName": "Classic Butter Shortbread",
+      "revenueKes": 1800,
+      "timestamp": "17:08:16"
     }
   ],
   "demoRequests": [],
